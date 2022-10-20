@@ -8,8 +8,6 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="1tRKB8KkaKuLh2JUi8pTb8CIkKsAgJqcJvF3IFtF">
 
-    <title>Fontoura Desenvolvimento</title>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -19,8 +17,7 @@
     <link href="css/custom.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
+<body class="container">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">Harve</a>
@@ -29,12 +26,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Pricing</a>
-                        <a class="nav-link disabled">Disabled</a>
+                        <a class="nav-link" href="list.php">Listar Funcionários</a>
+                        <a class="nav-link" href="form.php">Cadastrar Funcionários</a>
                     </div>
                 </div>
             </div>
         </nav>
-    </div>
