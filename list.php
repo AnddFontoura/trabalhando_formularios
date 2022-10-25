@@ -17,16 +17,22 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>99</td>
-                    <td>André</td>
-                    <td>Programador</td>
-                    <td>999999</td>
-                    <td>
-                        <a href="#" class="btn btn-primary">Editar Funcionário</a>
-                        <a href="#" class="btn btn-danger">Excluir Funcionário</a>
-                    </td>
-                </tr>
+                <?php
+                    foreach ($_SESSION['employee'] as $key => $employee) {
+                        echo "
+                            <tr>
+                                <td>{$key}</td>
+                                <td>{$employee['name']}</td>
+                                <td>{$employee['job']}</td>
+                                <td>" . $employee['salary'] . "</td>
+                                <td>
+                                    <a href='#' class='btn btn-primary'>Editar Funcionário</a>
+                                    <a href='deleteEmployee.php?key={$key}' class='btn btn-danger'>Excluir Funcionário</a>
+                                </td>
+                            </tr>          
+                        ";
+                    }
+                ?>
             </tbody>
         </table>
     </div>
