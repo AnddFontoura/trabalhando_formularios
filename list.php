@@ -1,4 +1,8 @@
-<?php include_once('includes/header.php'); ?>
+<?php include_once('includes/header.php'); 
+echo "<pre>";
+//var_dump($_SESSION);
+echo "</pre>";
+?>
 <div class="card mt-3">
     <div class="card-header">
         Listar Funcionários
@@ -26,7 +30,7 @@
                                 <td>{$employee['job']}</td>
                                 <td>" . $employee['salary'] . "</td>
                                 <td>
-                                    <a href='#' class='btn btn-primary'>Editar Funcionário</a>
+                                    <a href='form.php?key={$key}' class='btn btn-primary'>Editar Funcionário</a>
                                     <a href='deleteEmployee.php?key={$key}' class='btn btn-danger'>Excluir Funcionário</a>
                                 </td>
                             </tr>          

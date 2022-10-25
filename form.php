@@ -1,6 +1,18 @@
-<?php include_once('includes/header.php'); ?>
+<?php 
+    include_once('includes/header.php'); 
+    
+    $key = $_GET['key'] ?? null;
 
-<form action="saveEmployee.php" method="POST">
+    $employee = null;
+    $action = null;
+
+    if (isset($_SESSION['employee'][$key])) {
+        $employee = $_SESSION['employee'][$key];
+        $action = "?key=" . $key;
+    }
+?>
+
+<form action="saveEmployee.php<?php echo $action; ?>" method="POST">
     <div class="card mt-3">
         <div class="card-header">
             Cadastrar Funcionário
@@ -11,21 +23,21 @@
                 <div class="col-12 mt-3">
                     <div class="form-group">
                         <span> Nome do Funcionário </span>
-                        <input type="text" value="" name="employeeName" class="form-control"></input>
+                        <input type="text" value="<?php echo $employee['name'] ?? '' ?>" name="employeeName" class="form-control"></input>
                     </div>
                 </div>
 
                 <div class="col-12 mt-3">
                     <div class="form-group">
                         <span> Cargo do Funcionário </span>
-                        <input type="text" value="" name="employeeJob" class="form-control"></input>
+                        <input type="text" value="<?php echo $employee['job'] ?? '' ?>" name="employeeJob" class="form-control"></input>
                     </div>
                 </div>
 
                 <div class="col-12 mt-3">
                     <div class="form-group">
                         <span> Salário do Funcionário </span>
-                        <input type="text" value="" name="employeeSalary" class="form-control" pattern="/[0-9]{1,12}.[0-9]{2}/"></input>
+                        <input type="text" value="<?php echo $employee['salary'] ?? '' ?>" name="employeeSalary" class="form-control"></input>
                     </div>
                 </div>
             </div>
